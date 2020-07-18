@@ -1,0 +1,9 @@
+version: "3"
+services:
+    ava_node:
+        build: .
+        volumes:
+            - ~/.gecko/db:/db
+            - ./nginx.template:/etc/nginx/conf.d/nginx.template
+        ports: 
+            - 4444:4444
