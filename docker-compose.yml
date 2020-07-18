@@ -7,3 +7,7 @@ services:
             - ./nginx.template:/etc/nginx/conf.d/nginx.template
         ports: 
             - 4444:4444
+        environment:
+            - RPC_URL=${RPC_URL}
+            - LOCAL_URL=${LOCAL_URL}
+            - NGINX_PORT=${NGINX_PORT}

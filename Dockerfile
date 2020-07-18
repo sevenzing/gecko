@@ -14,6 +14,6 @@ COPY . gecko
 
 WORKDIR $GOPATH/src/github.com/ava-labs/gecko
 
-RUN ./scripts/build.sh
+#RUN ./scripts/build.sh
 
 CMD ["/bin/bash", "entrypoint.sh"]
