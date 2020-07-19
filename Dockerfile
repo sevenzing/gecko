@@ -6,12 +6,12 @@ RUN mkdir -p /go/src/github.com/ava-labs
 WORKDIR /src/github.com/ava-labs/
 COPY . gecko
 WORKDIR /src/github.com/ava-labs/gecko
-RUN ./scripts/build.sh
+#RUN ./scripts/build.sh
 
-FROM nginx
+FROM nginx:latest
 
-COPY --from=builder /src/github.com/ava-labs/gecko/build /build
+COPY --from=builder /src/github.com/ava-labs/gecko/build /gecko
 COPY entrypoint.sh nginx.template ./
 
-CMD ["/bin/bash", "entrypoint.sh"]
+CMD ["/bin/sh", "entrypoint.sh"]
 
